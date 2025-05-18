@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
-const Song = require('../models/Song');
 
 router.get('/', (req, res) => {
   res.render('login');
