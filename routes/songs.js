@@ -6,19 +6,11 @@ const Song = require('../models/Song');
 
 let accessToken = '';
 async function getSpotifyAccessToken() {
-  const authBuffer = Buffer
-    .from(`${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`)
-    .toString('base64');
-  const res = await fetch('https://accounts.spotify.com/api/token', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Basic ${authBuffer}`,
-      'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    body: 'grant_type=client_credentials'
-  });
-  const data = await res.json();
-  accessToken = data.access_token;
+  const authBuffer = Buffer.from(`${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`).toString('base64');
+  const response = await axios.post('https://accounts.spotify.com/api/token',
+    'grant_type=client_credentials',
+    { headers: { 'Authorization': `Basic ${authBuffer}`, 'Content-Type': 'application/x-www-form-urlencoded' } });
+  accessToken = response.data.access_token;
 }
 
 router.get('/dashboard', async (req, res) => {
