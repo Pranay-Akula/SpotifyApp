@@ -46,4 +46,19 @@ router.post('/search', async (req, res) => {
   res.redirect(`/songs/dashboard?user=${userId}`);
 });
 
+router.post('/clear', async (req, res) => {
+  const { userId } = req.body;
+  try {
+    await Song.deleteMany({ userId });
+  } catch (err) {
+    console.error('Error clearing songs:', err);
+  }
+  res.redirect(`/songs/dashboard?user=${userId}`);
+});
+
+router.post('/home', (req, res) => {
+  return res.redirect('/');
+});
+
+
 module.exports = router;

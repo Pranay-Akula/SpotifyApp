@@ -19,6 +19,16 @@
         <img src="<%= song.albumCoverUrl %>" alt="Album Cover" />
       </div>
     <% }) %>
+
   </div>
+
+  <form action="/songs/clear" method="POST" style="margin-top:1em;">
+    <input type="hidden" name="userId" value="<%= userId %>">
+    <button type="submit">Clear All</button>
+  </form>
+
+  <form action="/songs/home" method="POST" style="margin-top:1em;">
+    <button type="submit">Home</button>
+  </form>
 </body>
 </html>
