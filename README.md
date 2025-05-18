@@ -1,6 +1,6 @@
 Submitted by: Vishal Kotha (directory id: vkotha)
 
-Group Members: Vishal Kotha (vkotha), Kevin Sridhar (ksridha3), Saathvik Byreddy (sbyreddy), Pranay Akula (pakula12)
+Group Members: Vishal Kotha (vkotha), Kevin Sridhar (ksridha3), Saathvik Byreddy (sbyreddy), Pranay Akula (pakula1)
 
 App Description: Allow users to save album covers and store the results
 
